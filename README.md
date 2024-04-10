@@ -1,2 +1,3 @@
 # portfolio-v24
-My new version of portfolio
+My new version of portfolio.
+
