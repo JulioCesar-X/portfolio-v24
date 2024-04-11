@@ -1,44 +1,20 @@
-.section-second {
-    background-color: #f0f0f0;
-}
-
-
-.section h3 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-
-.scroll-btn {
-    background-color: #007bff;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.25rem;
-}
-
-.fixed-white {
-    color: white !important;
-}
-
-.scroll-btn:hover {
-    background-color: #0056b3;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.animate-fade-in {
-    animation: fade-in 1s ease-in-out;
-}
-
+/* Transição de cor para a palavra CODE */
 .CODE-transition {
-    transition: color 0.8s ease-in-out;
+    transition: color 1s ease-in-out;
+}
+
+/* Define a cor vermelha para o texto digitado */
+.typing-red {
+    color: rgb(231, 33, 33);
+}
+
+#textContainer.parent-container {
+    border-bottom-left-radius: 20px;
+    /* Ajuste conforme necessário */
+    border-bottom-right-radius: 20px;
+    /* Ajuste conforme necessário */
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.7);
+    /* Ajuste conforme necessário */
+    transition: box-shadow 0.5s ease-in-out;
+    /* Adiciona transição suave para a sombra */
 }

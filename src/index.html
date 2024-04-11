@@ -1,84 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Portfólio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.9/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="font-sans">
-    <section
-      class="section section-home bg-black flex flex-col justify-center h-screen"
-    >
-      <div class="flex justify-start">
-        <p class="max-w-lg text-5xl text-gray-500 animate-fade-in mx-24">
-          "At first, he was just a young man who kept his ideas stuck in his
-          head, as in the darkness of a cave. Later, with the help of
-          <strong class="duration-500 hover:text-white">Philosophy</strong>
-          and
-          <strong class="duration-500 hover:text-white">Natural Sciences</strong
-          >, a light came, but it was the
-          <strong class="CODE-transition">CODE</strong>
-          that changed everything."
-        </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.9/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans">
+  <section  class="section">
+    <div class="bg-black flex h-screen justify-center items-center"> <!-- Ajuste: Centraliza o texto -->
+      <p id="textContainer" class="max-w-2xl text-gray-500 mx-10 text-5xl"></p> <!-- Ajuste: Reduz o tamanho do texto -->
+    </div>
+  </section>
+  
+  <section class="section-second">
+    <div class="mx-auto mt-10 text-6xl h-screen">
+      <!-- Div para o texto principal -->
+      <p>HI, My name is Julio Cesar</p>
+      <div id="typingText" class="text-5xl font-bold ">
+        <p>and I am <span id="typingEffect" class="typing-red"></span></p>
       </div>
-      <div class="scroll-down">
-        <span></span>
-        <span></span>
-        <span></span>
+    </div>
+  </section>
+  <section class=" bg-gray-300 flex flex-col justify-center items-center h-screen">
+    <div class="content text-center">
+      <h2 class="text-3xl font-bold">Conheça meu trabalho</h2>
+      <div class="scroll-buttons mt-8 flex gap-4">
+        <button class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-scroll-to=".section-projects">
+          Projetos
+        </button>
+        <button class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-scroll-to=".section-about">
+          Sobre
+        </button>
+        <button class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-scroll-to=".section-contact">
+          Contato
+        </button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section
-      class="section section-second bg-gray-300 flex flex-col justify-center items-center h-screen"
-    >
-      <div class="content text-center">
-        <h2 class="text-3xl font-bold">Conheça meu trabalho</h2>
-        <div class="scroll-buttons mt-8 flex gap-4">
-          <button
-            class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            data-scroll-to=".section-projects"
-          >
-            Projetos
-          </button>
-          <button
-            class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            data-scroll-to=".section-about"
-          >
-            Sobre
-          </button>
-          <button
-            class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            data-scroll-to=".section-contact"
-          >
-            Contato
-          </button>
-        </div>
-      </div>
-    </section>
+  <section class=" bg-gray-500 flex flex-col justify-center items-center h-screen">
+    <h3 class="text-2xl font-bold mb-8">Sobre Mim</h3>
+  </section>
 
-    <section
-      class="section section-projects bg-gray-400 flex flex-col justify-center items-center h-screen"
-    >
-      <h3 class="text-2xl font-bold mb-8">Meus Projetos</h3>
-    </section>
+  <section class="section section-contact bg-gray-600 flex flex-col justify-center items-center h-screen">
+    <h3 class="text-2xl font-bold mb-8">Contato</h3>
+  </section>
 
-    <section
-      class="section section-about bg-gray-500 flex flex-col justify-center items-center h-screen"
-    >
-      <h3 class="text-2xl font-bold mb-8">Sobre Mim</h3>
-    </section>
-
-    <section
-      class="section section-contact bg-gray-600 flex flex-col justify-center items-center h-screen"
-    >
-      <h3 class="text-2xl font-bold mb-8">Contato</h3>
-    </section>
-
-    <script src="scripts.js"></script>
-  </body>
+  <script src="scripts.js"></script>
+</body>
 </html>
