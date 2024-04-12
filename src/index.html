@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Portfólio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.9/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="font-sans">
-  <section  class="section">
-    <div class="bg-black flex h-screen justify-center items-center"> <!-- Ajuste: Centraliza o texto -->
-      <p id="textContainer" class="max-w-2xl text-gray-500 mx-10 text-5xl"></p> <!-- Ajuste: Reduz o tamanho do texto -->
-    </div>
-  </section>
-  
-  <section class="section-second">
-    <div class="mx-auto mt-10 text-6xl h-screen">
-      <!-- Div para o texto principal -->
-      <p>HI, My name is Julio Cesar</p>
-      <div id="typingText" class="text-5xl font-bold ">
-        <p>and I am <span id="typingEffect" class="typing-red"></span></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfólio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.9/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans bg-black">
+    <section class="min-h-screen flex justify-center items-center">
+      <div class="max-w-2xl text-gray-500 text-center">
+        <!-- Conteúdo aqui -->
+        <p id="textContainer" class="text-5xl"></p>
       </div>
-    </div>
-  </section>
-  <section class=" bg-gray-300 flex flex-col justify-center items-center h-screen">
-    <div class="content text-center">
-      <h2 class="text-3xl font-bold">Conheça meu trabalho</h2>
-      <div class="scroll-buttons mt-8 flex gap-4">
-        <button class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-scroll-to=".section-projects">
-          Projetos
-        </button>
-        <button class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-scroll-to=".section-about">
-          Sobre
-        </button>
-        <button class="scroll-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" data-scroll-to=".section-contact">
-          Contato
-        </button>
+    </section>
+
+    <section class="section-second">
+      <div class="mx-auto mt-10 text-center sm:text-left">
+        <!-- Div para o texto principal -->
+        <p class="text-white text-8xl">Hi, My name is Júlio César</p>
+        <div id="typingText" class="text-5xl font-bold">
+          <p class="text-white">
+            and I am <span id="typingEffect" class="typing-red"></span>
+          </p>
+        </div>
+        <div
+          class="btn btn-hamburger active btn-click magnetic"
+          data-strength="50"
+          data-strength-text="25"
+        >
+          <div class="btn-bars">
+            <span class="bar"></span>
+          </div>
+        </div>
+        <div class="flex justify-center items-center h-screen">
+          <div
+            class="container bg-cover bg-center bg-no-repeat size rounded-full flex justify-center items-center ml-auto mr-96 transition-all duration-500"
+          >
+            <div class="btn-magnetic triangle">
+              <div class="btn-bars">
+                <span>Contact me</span>
+              </div>
+            </div>
+            <div class="btn-magnetic square">
+              <div class="btn-bars">
+                <span>Projects</span>
+              </div>
+            </div>
+            <div class="btn-magnetic circle">
+              <div class="btn-bars">
+                <span>About me</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class=" bg-gray-500 flex flex-col justify-center items-center h-screen">
-    <h3 class="text-2xl font-bold mb-8">Sobre Mim</h3>
-  </section>
-
-  <section class="section section-contact bg-gray-600 flex flex-col justify-center items-center h-screen">
-    <h3 class="text-2xl font-bold mb-8">Contato</h3>
-  </section>
-
-  <script src="scripts.js"></script>
-</body>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
 </html>

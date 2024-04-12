@@ -1,6 +1,6 @@
 /* Transição de cor para a palavra CODE */
 .CODE-transition {
-    transition: color 1s ease-in-out;
+    transition: color 3.5s ease-in-out;
 }
 
 /* Define a cor vermelha para o texto digitado */
@@ -8,13 +8,160 @@
     color: rgb(231, 33, 33);
 }
 
-#textContainer.parent-container {
-    border-bottom-left-radius: 20px;
-    /* Ajuste conforme necessário */
-    border-bottom-right-radius: 20px;
-    /* Ajuste conforme necessário */
-    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.7);
-    /* Ajuste conforme necessário */
-    transition: box-shadow 0.5s ease-in-out;
-    /* Adiciona transição suave para a sombra */
+
+/* Estilos para o botão hamburger */
+.btn-hamburger {
+    position: fixed;
+    top: calc(1.5rem);
+    right: calc(1.5rem);
+    z-index: 105;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    perspective: 1000px;
+    /* Adiciona perspectiva para o efeito 3D */
+}
+
+.btn-bars {
+    width: 25%;
+    height: 25%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* Adiciona efeito 3D */
+}
+
+.bar {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform-origin: center center;
+    /* Define o ponto de origem da transformação */
+    transition: transform 2s ease;
+}
+
+.btn-bars span {
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    overflow: hidden;
+    /* Evita que o texto ultrapasse as bordas */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.btn-hamburger.active {
+    transform: scale(1.5);
+    /* Efeito de escala ao passar o mouse */
+}
+
+.btn-hamburger:hover {
+    background-color: gray;
+    /* Mudança de cor de fundo ao passar o mouse */
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.triangle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 0;
+    border-left: 10rem solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 10rem solid black;
+}
+
+.triangle .btn-bars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.triangle span {
+    position: absolute;
+    bottom: -1.5rem;
+    color: white;
+}
+
+.square {
+    background-color: black;
+}
+
+.circle {
+    background-color: black;
+    border-radius: 50%;
+}
+
+.circle:hover {
+
+    background-color: darkgray;
+}
+
+.square:hover {
+
+    background-color: darkgray;
+}
+
+.triangle:hover {
+
+    border-bottom: 10rem solid darkgrey;
+}
+
+.size {
+
+    width: 31.5rem;
+    height: 31.5rem;
+
+}
+
+.container {
+    border: 2px solid darkgrey;
+    /* Define a sombra inicial */
+    box-shadow: 0px 0px 0px 400px rgba(193, 193, 193, 0.633);
+    /* Adiciona transição para a sombra */
+    transition: box-shadow 0.8s ease-in-out;
+
+}
+
+.container:hover {
+    /* Altera a sombra ao passar o mouse sobre o container */
+    box-shadow: 0px 0px 0px 5px black;
+    border: 2px solid black;
+}
+
+.btn-magnetic {
+
+    width: 10rem;
+    height: 10rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    perspective: 1000px;
+    /* Adiciona perspectiva para o efeito 3D */
+
 }
