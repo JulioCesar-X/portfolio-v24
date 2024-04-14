@@ -9,49 +9,47 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" href="styles.css" as="style" />
   </head>
-  <body class="font-sans bg-black">
-    <section class="min-h-screen flex justify-center items-center">
-      <div class="max-w-2xl text-gray-500 text-center">
-        <!-- Conteúdo aqui -->
-        <p id="textContainer" class="text-5xl"></p>
+  <body class="font-sans">
+    <section class="min-h-screen flex justify-center items-center bg-black">
+      <div class="max-w-6xl text-light-gray text-center">
+        <p id="textContainer" class="text-8xl"></p>
       </div>
     </section>
 
     <section class="section-second">
-      <div class="mx-auto mt-10 text-center sm:text-left">
-        <!-- Div para o texto principal -->
-        <p class="text-white text-8xl">Hi, My name is Júlio César</p>
-        <div id="typingText" class="text-5xl font-bold">
-          <p class="text-white">
-            and I am <span id="typingEffect" class="typing-red"></span>
+      <div class="btn-hamburger">
+        <!-- Ícone do hambúrguer aqui -->
+      </div>
+      <div class="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#projects">Projects</a>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="mx-auto mt-10 text-center sm:text-left">
+          <p class="text-black text-4xl md:text-6xl lg:text-8xl">
+            Hi, My name is Júlio César
           </p>
-        </div>
-        <div
-          class="btn btn-hamburger active btn-click magnetic"
-          data-strength="50"
-          data-strength-text="25"
-        >
-          <div class="btn-bars">
-            <span class="bar"></span>
-          </div>
-        </div>
-        <div class="flex justify-center items-center h-screen">
           <div
-            class="container bg-cover bg-center bg-no-repeat size rounded-full flex justify-center items-center ml-auto mr-96 transition-all duration-500"
+            id="typingText"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold"
           >
-            <div class="btn-magnetic triangle">
-              <div class="btn-bars">
+            <p>and I am <span id="typingEffect" class="typing-red"></span></p>
+          </div>
+          <div class="flex justify-center items-center h-screen">
+            <div
+              class="container bg-cover bg-center bg-no-repeat size rounded-full flex justify-center items-center ml-auto mr-96 transition-all duration-500"
+            >
+              <div class="btn-magnetic triangle">
                 <span>Contact me</span>
               </div>
-            </div>
-            <div class="btn-magnetic square">
-              <div class="btn-bars">
+              <div class="btn-magnetic square">
                 <span>Projects</span>
               </div>
-            </div>
-            <div class="btn-magnetic circle">
-              <div class="btn-bars">
+              <div class="btn-magnetic circle">
                 <span>About me</span>
               </div>
             </div>
@@ -59,7 +57,20 @@
         </div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="scripts.js"></script>
+    <!-- Footer -->
+    <footer class="bg-black p-3 text-white text-center">
+      <!-- Copyright -->
+      <div class="text-4xl">
+        <span>© 2024 Copyright:</span>
+        <a class="text-white" href="#">Julio Pereira</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      defer
+    ></script>
+    <script src="scripts.js" defer></script>
   </body>
 </html>
