@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   typeWords();
   paintCodeWord();
   paintScrollWord();
+
 });
 
 function initializeText() {
@@ -23,31 +24,32 @@ function paintCodeWord() {
   }
 }
 
-// function paintScrollWord() {
-//    // Adiciona classe "text-white" à palavra "CODE" quando o usuário rolar para baixo
-//   window.addEventListener("scroll", function () {
-//     const otherWords = document.querySelectorAll(".transition");
+function paintScrollWord() {
+   // Adiciona classe "text-white" à palavra "CODE" quando o usuário rolar para baixo
+  window.addEventListener("scroll", function () {
+    const otherWords = document.querySelectorAll(".transition");
 
-//     if (window.scrollY > 25) {
-//       codeWord.classList.add("text-white", "font-bold");
-//       otherWords.forEach((word) => {
-//         word.classList.remove("text-white", "font-bold");
-//       });
-//     } else {
-//       otherWords.forEach((word) => {
-//         word.classList.add("text-white", "font-bold");
-//       });
-//     }
+    if (window.scrollY > 15) {
+      codeWord.classList.add("text-white", "font-bold");
+      otherWords.forEach((word) => {
+        word.classList.remove("text-white", "font-bold");
+      });
+    } else {
+      otherWords.forEach((word) => {
+        word.classList.add("text-white", "font-bold");
+      });
+    }
 
-//   });
+  });
 
-// }
+}
 
 function handleFloatingShapes() {
   const shapes = document.querySelectorAll(".btn-magnetic");
   shapes.forEach((shape) => {
     shape.addEventListener("mouseenter", () => {
       shape.style.transform = "scale(1.2)";
+      shape.classList.add('CODE-transition', 'text-6x1');
       anime.remove(shape);
     });
     shape.addEventListener("mouseleave", () => {
@@ -81,42 +83,55 @@ function setupHamburgerMenu() {
 }
 
 function typeWords() {
-  
-  const vectorWords = [
+  const words = [
     "Curious",
     "Passionate",
     "Creative",
     "Persistent",
     "Developer",
   ];
-  const typingEffect = document.getElementById("typingEffect");
-  let index = 0;
+  const typingEffectElement = document.getElementById("typingEffect");
+  let wordIndex = 0;
 
   function typeNextWord() {
-    if (index < vectorWords.length) {
-      const word = vectorWords[index];
-      typingEffect.textContent = ""; // Limpa o conteúdo do elemento
-      let i = 0;
+    if (wordIndex < words.length) {
+      let charIndex = 0;
+      const currentWord = words[wordIndex];
 
-      // Função para adicionar caracteres com efeito de digitação e caractere piscante
-      function typeCharacter() {
-        if (i <= word.length) {
-          typingEffect.textContent = word.substring(0, i) + "|"; // Adiciona o texto digitado até o momento e o caractere piscante
-          i++;
-          setTimeout(typeCharacter, 300); // Tempo de digitação entre os caracteres
+      // Mostrar cursor inicial antes de começar a digitar
+      typingEffectElement.textContent = "|";
+      setTimeout(() => typeCharacter(currentWord), 600);
+
+      function typeCharacter(word) {
+        if (charIndex <= word.length) {
+          typingEffectElement.textContent = word.slice(0, charIndex) + "|";
+          charIndex++;
+          setTimeout(() => typeCharacter(word), 250);
+          
         } else {
-          setTimeout(removeLastCharacter, 400); // Tempo antes de remover o caractere piscante
+          // Decidir o que fazer após terminar de digitar a palavra
+          if (word === "Developer") {
+            typingEffectElement.classList.add("typing-red");
+            // Para "Developer", não remover caracteres e remover cursor
+            typingEffectElement.textContent = word; // Remover cursor final
+            // Não chamar mais nada para encerrar a função
+          } else {
+            setTimeout(removeCharacters, 400);
+          }
         }
       }
 
-      // Função para remover o último caractere piscante
-      function removeLastCharacter() {
-        typingEffect.textContent = word.substring(0, i - 1); // Remove o último caractere piscante
-        index++;
-        setTimeout(typeNextWord, 600); // Tempo de espera antes de passar para a próxima palavra
+      function removeCharacters() {
+        if (charIndex > 0) {
+          charIndex--;
+          typingEffectElement.textContent =
+            currentWord.slice(0, charIndex) + "|";
+          setTimeout(removeCharacters, 100);
+        } else {
+          wordIndex++;
+          setTimeout(typeNextWord, 600);
+        }
       }
-
-      typeCharacter(); // Inicia a função para digitar os caracteres
     }
   }
 
@@ -138,3 +153,24 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("Erro ao obter a foto de perfil:", error);
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.5, // Define o quanto do item deve estar visível para ativar
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-fadeIn"); // Certifique-se de que esta classe está definida no CSS
+      } else {
+        entry.target.classList.remove("animate-fadeIn");
+      }
+    });
+  }, observerOptions);
+
+  // Aplicar o observer a todos os elementos que requerem animação ao entrar em vista
+  document.querySelectorAll('.animatable').forEach(el => observer.observe(el));
+});
+
+

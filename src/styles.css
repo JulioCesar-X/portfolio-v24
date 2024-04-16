@@ -1,11 +1,12 @@
 /* Estilos para a transição da palavra CODE */
 .CODE-transition {
-    transition: color 3.5s ease-in-out;
+    transition: color 1s ease-in-out;
 }
 
 /* Define a cor vermelha para o texto digitado */
 .typing-red {
     color: rgb(231, 33, 33);
+    transition: color 1s;
 }
 
 /* Melhorar o contraste para leitura */
@@ -41,8 +42,8 @@
 
 /* Configurações gerais dos botões magnéticos */
 .btn-magnetic {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     color: white;
     background-color: black;
     display: flex;
@@ -69,9 +70,9 @@
 .triangle {
     width: 0;
     height: 0;
-    border-left: 10rem solid transparent;
+    border-left: 8rem solid transparent;
     border-right: 0 solid transparent;
-    border-bottom: 10rem solid black;
+    border-bottom: 8rem solid black;
     background-color: transparent;
     /* Tamanho e cor do triângulo */
     display: flex;
@@ -85,15 +86,15 @@
 }
 
 .triangle:hover {
-    border-bottom: 10rem solid darkgray;
+    border-bottom: 8rem solid darkgray;
 }
 
 /* Estilo do contêiner que agrupa as formas */
 .container {
-    width: 31.5rem;
-    height: 31.5rem;
+    width: 35.5rem;
+    height: 35.5rem;
     border: 2px solid darkgrey;
-    box-shadow: 0px 0px 0px 400px rgba(193, 193, 193, 0.633);
+    box-shadow: 0px 0px 50px 200px rgba(193, 193, 193, 0.368);
     transition: box-shadow 0.8s ease-in-out;
 }
 
@@ -121,7 +122,7 @@
     height: 100%;
     background-color: black;
     color: white;
-    transition: right 0.5s ease;
+    transition: right 0.8s ease;
 }
 
 .nav-menu.active {
@@ -139,7 +140,21 @@
     border-radius: 50%;
 }
 
-.mt-10 {
 
-    margin-top: 18.5rem;
+.arredondado-inferior {
+    border-bottom-left-radius: 50px;
+    /* Raio da borda arredondada */
+    border-bottom-right-radius: 50px;
+    /* Raio da borda arredondada */
+}
+
+.centralizar {
+    margin-top: 180px;
+    margin-right: 100px;
+}
+
+.animate-fadeIn {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
