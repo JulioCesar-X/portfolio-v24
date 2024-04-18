@@ -106,7 +106,7 @@ function typeWords() {
         if (charIndex <= word.length) {
           typingEffectElement.textContent = word.slice(0, charIndex) + "|";
           charIndex++;
-          setTimeout(() => typeCharacter(word), 250);
+          setTimeout(() => typeCharacter(word), 100);
           
         } else {
           // Decidir o que fazer após terminar de digitar a palavra
@@ -116,7 +116,7 @@ function typeWords() {
             typingEffectElement.textContent = word; // Remover cursor final
             // Não chamar mais nada para encerrar a função
           } else {
-            setTimeout(removeCharacters, 400);
+            setTimeout(removeCharacters, 600);
           }
         }
       }

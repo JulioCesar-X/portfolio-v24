@@ -1,0 +1,51 @@
+.timeline-container {
+    font-family: Arial, sans-serif;
+    /* Escolha a fonte que preferir */
+    max-width: 600px;
+    /* Ajuste a largura máxima conforme necessário */
+    margin: 0 auto;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #000;
+    /* Cor da linha da timeline */
+    margin-bottom: 15px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -7.5px;
+    /* Ajuste isso baseado no tamanho do marcador */
+    top: 0;
+    height: 15px;
+    /* Tamanho do marcador */
+    width: 15px;
+    /* Tamanho do marcador */
+    border-radius: 50%;
+    background-color: #000;
+    /* Cor do marcador */
+}
+
+.timeline-content {
+    margin-bottom: 30px;
+    /* Espaçamento entre os itens */
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+}
+
+.timeline-content p {
+    margin: 0;
+}
+
+.timeline-item {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.in-view {
+    opacity: 1;
+}

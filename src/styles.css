@@ -150,11 +150,66 @@
 
 .centralizar {
     margin-top: 180px;
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
 .animate-fadeIn {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+/*
+
+*/
+:root {
+    --balloon-border-radius: 4px;
+    --balloon-color: rgba(3, 3, 3, 0.5);
+    --balloon-text-color: #fff;
+    --balloon-font-size: 14px;
+    --balloon-move: 2px;
+    --balloon-font-weight: 400;
+}
+
+[aria-label][data-balloon-pos][data-balloon-pos="left"]:before {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: var(--balloon-color);
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(calc(var(--balloon-move) * -1), -50%);
+    transition: opacity 0.3s;
+    opacity: 0;
+    border-radius: var(--balloon-border-radius);
+}
+
+[aria-label][data-balloon-pos][data-balloon-pos="left"]:after {
+    content: attr(aria-label);
+    position: absolute;
+    right: calc(100% + 20px);
+    top: 50%;
+    transform: translate(calc(var(--balloon-move) * -1), -50%);
+    background: var(--balloon-color);
+    text-align: center;
+    color: var(--balloon-text-color);
+    font-size: var(--balloon-font-size);
+    font-weight: var(--balloon-font-weight);
+    padding: 4px 8px;
+    border-radius: var(--balloon-border-radius);
+    opacity: 0;
+    transition: opacity 0.6s;
+    pointer-events: none;
+}
+
+[aria-label][data-balloon-pos="left"]:hover:before,
+[aria-label][data-balloon-pos="left"]:hover:after {
+    opacity: 1;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
